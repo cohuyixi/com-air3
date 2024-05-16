@@ -1,7 +1,36 @@
 ---
+const SOCIALNETWORKS = [
+	{
+		name: 'Github',
+		url: 'https://github.com/danielcgilibert/blog-template'
+	},
+
+	{
+		name: 'Twitter',
+		url: 'https://github.com/danielcgilibert/blog-template'
+	}
+]
+
 const today = new Date()
 ---
 
-<footer class='flex justify-center items-center w-full px-16 h-28 border-t-2'>
-	&copy; {today.getFullYear()} Your Name. All rights reserved.
+<footer class=''>
+	<div>
+		<h3 class=''>Social</h3>
+		<ul>
+			{
+				SOCIALNETWORKS.map((network) => (
+					<li>
+						<a class='' href={network.url} target='_blank' aria-label={network.name}>
+							{network.name}
+						</a>
+					</li>
+				))
+			}
+		</ul>
+	</div>
+	<a href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>Tags</a>
+	<p class=''>
+		Your Name &copy; 2022 - {today.getFullYear()}. All rights reserved.
+	</p>
 </footer>

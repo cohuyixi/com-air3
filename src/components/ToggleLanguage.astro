@@ -1,0 +1,56 @@
+---
+import LanguageIcon from './icons/LanguageIcon.astro'
+---
+
+<script>
+	class LanguageToggle extends HTMLElement {
+		constructor() {
+			super()
+			const button = this.querySelector('button') as HTMLButtonElement
+
+			if (button) {
+				button.addEventListener('click', (e) => {
+					if (e.currentTarget instanceof HTMLButtonElement) {
+						let isEnglish = e.currentTarget.getAttribute('data-lang') === 'en'
+						let langChangeEvent = new CustomEvent('lang-change', {
+							detail: {
+								lang: isEnglish ? 'zh' : 'en'
+							}
+						})
+						document.dispatchEvent(langChangeEvent)
+						button.setAttribute('data-lang', isEnglish ? 'zh' : 'en')
+						button.textContent = isEnglish ? '简体中文' : 'English'
+					}
+				})
+			}
+		}
+	}
+
+	if ('customElements' in window) {
+		customElements.define('language-toggle', LanguageToggle)
+	}
+</script>
+
+<language-toggle class='hidden sm:flex justify-between items-center h-6 w-20 px-1 border rounded'>
+	<LanguageIcon class='absolute top-0 left-0 w-8 h-8' />
+	<button id='toggle-lang' class='text-xs' data-lang='en' aria-label='Toggle Language'
+		>简体中文</button
+	>
+</language-toggle>
+
+<script is:inline>
+	const button = document.getElementById('toggle-lang')
+
+	function setLangButton() {
+		const isEnglish = document.documentElement.lang === 'en'
+		button.setAttribute('data-lang', isEnglish ? 'en' : 'zh')
+		button.textContent = isEnglish ? '简体中文' : 'English'
+	}
+	setLangButton()
+
+	document.addEventListener('lang-change', (e) => {
+		const { lang } = e.detail
+		document.documentElement.lang = lang
+		setLangButton()
+	})
+</script>
