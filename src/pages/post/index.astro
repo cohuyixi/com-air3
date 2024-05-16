@@ -1,5 +1,5 @@
 ---
-import Banner from '@/components/Banner'
+import ListCategories from '@/components/ListCategories'
 import ListPosts from '@/components/ListPosts'
 import Title from '@/components/Title'
 import BaseLayout from '@/layouts/BaseLayout'
@@ -10,9 +10,11 @@ const posts = await getPosts(MAX_POSTS)
 ---
 
 <BaseLayout title='Home'>
-	<Banner />
-	<Title title='Articles' />
-	<ListPosts posts={posts} />
-	<Title title='Projects' />
-	<ListPosts posts={posts} />
+	<Title title='Blog Title' />
+	<ListCategories />
+
+	<div>
+		<h2 class='text-lg font-medium tracking-wide'>Latest Posts</h2>
+		<ListPosts FirstBig={true} posts={posts} />
+	</div>
 </BaseLayout>

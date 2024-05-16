@@ -1,0 +1,25 @@
+---
+import { bannerConfig } from '@/data/banner.config'
+import { Image } from 'astro:assets'
+---
+
+<article class='relative w-full mx-4 min-h-[calc(100vh-400px)] max-h-75vh mt-8'>
+	<div class='absolute w-full h-full inset-0'>
+		<Image
+			src={bannerConfig.image}
+			format='webp'
+			class='h-full min-w-full object-cover hover:scale-[101%] transition-all duration-200 rounded-[2px]'
+			alt={`img of ${bannerConfig.title}`}
+		/>
+	</div>
+	<div class='absolute w-full h-full inset-0 flex flex-col justify-center items-center text-white'>
+		<p class='text-3xl'>{bannerConfig.title}</p>
+		<p class='mx-auto max-w-[620px]'>
+			{bannerConfig.description}
+		</p>
+
+		<div>
+			<a href=''>Read More</a>
+		</div>
+	</div>
+</article>

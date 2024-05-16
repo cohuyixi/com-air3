@@ -18,10 +18,10 @@ const NAVIGATION = [
 ]
 ---
 
-<header class='grid grid-cols-12 items-center h-12 font-semibold' transition:persist='navbar'>
+<header class='flex justify-between items-center h-12 font-semibold mx-12' transition:persist='navbar'>
 	<h1 class='col-start-1'><a class='text-lg mr-auto' href='/'>Home</a></h1>
-	<nav class='col-start-5 col-end-9 px-6'>
-		<ul class='flex justify-between'>
+	<nav class=''>
+		<ul class='flex justify-between gap-4'>
 			{
 				NAVIGATION.map((item) => (
 					<li>
@@ -33,7 +33,7 @@ const NAVIGATION = [
 			}
 		</ul>
 	</nav>
-	<div class='col-end-13 justify-self-end'>
+	<div class=''>
 		<ToggleLanguage />
 		<button
 			id='menu-toggle-button'
@@ -53,7 +53,7 @@ z-10 transform -translate-y-full bg-white duration-300 ease-in-out'
 		role='dialog'
 		aria-modal='true'
 	>
-		<p class=''>11111111111</p>
+		<ul></ul>
 	</div>
 </header>
 
