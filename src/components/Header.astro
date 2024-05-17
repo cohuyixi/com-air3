@@ -18,9 +18,12 @@ const NAVIGATION = [
 ]
 ---
 
-<header class='flex justify-between items-center h-12 font-semibold mx-12' transition:persist='navbar'>
+<header
+	class='flex justify-between items-center h-12 font-semibold mx-16'
+	transition:persist='navbar'
+>
 	<h1 class='col-start-1'><a class='text-lg mr-auto' href='/'>Home</a></h1>
-	<nav class=''>
+	<nav class='hidden sm:block'>
 		<ul class='flex justify-between gap-4'>
 			{
 				NAVIGATION.map((item) => (

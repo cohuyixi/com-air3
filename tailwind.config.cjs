@@ -6,15 +6,16 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,md,mdx,ts}'],
 	theme: {
 		extend: {
-			colors: {
-				white: '#f8f9fa'
-			},
 			fontFamily: {
 				body: ['Manrope', ...defaultTheme.fontFamily.sans]
 			},
 			gridTemplateColumns: {
 				list: 'repeat(auto-fill, minmax(400px, max-content))'
-			}
+			},
+			aspectRatio: {
+				'4/3': '4 / 3',
+				'golden-ratio': '161.8%',
+			},
 		}
 	},
 	plugins: [require('@tailwindcss/typography')]

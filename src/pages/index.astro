@@ -5,14 +5,18 @@ import Title from '@/components/Title'
 import BaseLayout from '@/layouts/BaseLayout'
 import { getPosts } from '@/utils'
 
-const MAX_POSTS = 5
+const MAX_POSTS = 6
 const posts = await getPosts(MAX_POSTS)
 ---
 
 <BaseLayout title='Home'>
 	<Banner />
-	<Title title='Articles' />
-	<ListPosts posts={posts} />
-	<Title title='Projects' />
-	<ListPosts posts={posts} />
+	<section class='mx-4 lg:mx-16'>
+		<Title title='Articles' />
+		<ListPosts posts={posts} />
+	</section>
+	<section class='mx-4 lg:mx-16'>
+		<Title title='Projects' />
+		<ListPosts posts={posts} />
+	</section>
 </BaseLayout>

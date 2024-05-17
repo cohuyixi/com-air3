@@ -2,17 +2,17 @@
 import BaseHead from '@/components/BaseHead'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import ProviderTheme from '@/components/ProviderTheme'
+// import ProviderTheme from '@/components/ProviderTheme'
 const { title, description, image, articleDate } = Astro.props
 ---
 
 <html lang='en' class='scroll-smooth'>
 	<head>
 		<BaseHead title={title} description={description} ogImage={image} articleDate={articleDate} />
-		<ProviderTheme />
+		<!-- <ProviderTheme /> -->
 	</head>
 
-	<body class=''>
+	<body class='bg-[#f5f5f7]'>
 		<main class=''>
 			<Header />
 			<slot />
@@ -20,7 +20,7 @@ const { title, description, image, articleDate } = Astro.props
 		</main>
 		<style>
 			body {
-				margin-left: calc(100vw - 100%); /* prevent layout shift */
+				margin-left: calc(100vw - 100%);
 			}
 		</style>
 	</body>
