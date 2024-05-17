@@ -4,8 +4,8 @@ import ToggleLanguage from './ToggleLanguage.astro'
 
 const NAVIGATION = [
 	{
-		name: 'Article',
-		path: '/post'
+		name: 'Blog',
+		path: '/blog'
 	},
 	{
 		name: 'Project',
@@ -19,11 +19,11 @@ const NAVIGATION = [
 ---
 
 <header
-	class='flex justify-between items-center h-12 font-semibold mx-16'
+	class='flex justify-between items-center w-screen font-semibold px-16 pt-8'
 	transition:persist='navbar'
 >
-	<h1 class='col-start-1'><a class='text-lg mr-auto' href='/'>Home</a></h1>
-	<nav class='hidden sm:block'>
+	<a class='text-lg' href='/'>Home</a>
+	<!-- <nav class='hidden sm:block'>
 		<ul class='flex justify-between gap-4'>
 			{
 				NAVIGATION.map((item) => (
@@ -35,7 +35,7 @@ const NAVIGATION = [
 				))
 			}
 		</ul>
-	</nav>
+	</nav> -->
 	<div class=''>
 		<ToggleLanguage />
 		<button

@@ -14,10 +14,10 @@ const SOCIALNETWORKS = [
 const today = new Date()
 ---
 
-<footer class=''>
+<footer class='border-t pb-4'>
 	<div>
 		<h3 class=''>Social</h3>
-		<ul>
+		<ul class=''>
 			{
 				SOCIALNETWORKS.map((network) => (
 					<li>
@@ -29,7 +29,7 @@ const today = new Date()
 			}
 		</ul>
 	</div>
-	<a href='/tags' class='flex items-center gap-1 text-2xl md:text-base'>Tags</a>
+
 	<p class=''>
 		Your Name &copy; 2022 - {today.getFullYear()}. All rights reserved.
 	</p>
